@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-    <script src="{{asset('assets/js/color-modes.js')}}"></script>
+    <script src="/assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -10,7 +10,7 @@
     <title>Signin Template · Bootstrap v5.3</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="{{asset('assets/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -150,21 +150,30 @@
 
 
 <main class="form-signin w-100 m-auto">
-  <form action="{{route('login.authenticate')}}" method="post">
+  <form action="{{route('register.store')}}" method="post">
     @csrf
 
     <img class="mb-4" src="/image.png" alt="" width="120" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">Please Register</h1>
 
+    <div class="form-floating">
+      <input type="text" name="name" class="form-control
+        @error('name')
+        is-invalid
+        @enderror"
+        value="{{old('name')}}"
+      id="name" placeholder="name">
+      <label for="floatingInput">Name</label>
+    </div>
     <div class="form-floating">
       <input type="email" name="email" class="form-control
       @error('email')
         is-invalid
-        @enderror" value="{{old('email')}}" id="floatingInput" placeholder="name@example.com">
+        @enderror" value="{{old('email')}}"  id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" name="password"  class="form-control
+      <input type="password" name="password" class="form-control
       @error('password')
         is-invalid
         @enderror" id="floatingPassword" placeholder="Password">
@@ -172,11 +181,11 @@
     </div>
 
 
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2" type="submit">register</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
   </form>
 </main>
-<script src="{{asset('assets/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

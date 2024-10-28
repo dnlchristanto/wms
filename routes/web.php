@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductGroupController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,6 @@ Route::post('/logout', function () {
 Route::get('/register',[RegisterController::class,'index'])->name('register')->middleware('guest');
 Route::post('/register',[RegisterController::class,'store'])->name('register.store');
 Route::get('/home',[HomeController::class,'index'])->middleware('auth');
+
+Route::resource('productgroups', ProductGroupController::class)->middleware('auth');
+Route::resource('items', ItemController::class)->middleware('auth');
