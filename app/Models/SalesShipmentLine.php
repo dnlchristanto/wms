@@ -14,4 +14,11 @@ class SalesShipmentLine extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function salesshipmentheader()
+    {
+        return $this->belongsTo(TransactionHeader::class,'sj_id','id');
+
+    }
+
 }

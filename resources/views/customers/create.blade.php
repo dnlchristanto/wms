@@ -3,23 +3,22 @@
 @section('content')
 <div class="card card-danger">
     <div class="card-header">
-      <h3 class="card-title">Update Product Group</h3>
+      <h3 class="card-title">Add Customer</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('productgroups.update',$product_group->id)}}" method="post">
-        @csrf
-        @method('PUT')
+        <form action="{{route('customers.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
       <div class="form-group">
-        <label>Code</label>
+        <label>Customer No</label>
 
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-child"></i></span>
           </div>
-          <input name="code" type="text" class="form-control @error('code')
+          <input name="customer_no" type="text" class="form-control @error('customer_no')
           is-invalid
-            @enderror" value="{{old('code', $product_group->code)}}">
-            @error('code')
+            @enderror" value="{{old('customer_no')}}">
+            @error('customer_no')
             <div class="alert alert-danger mt-2 ">
             {{$message}}
                 </div>
@@ -27,16 +26,16 @@
         </div>
         <!-- /.input group -->
 
-        <label>Description</label>
+        <label>Name</label>
 
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-child"></i></span>
           </div>
-          <input name="description" type="text" class="form-control @error('description')
+          <input name="name" type="text" class="form-control @error('name')
           is-invalid
-            @enderror" value="{{old('description', $product_group->description)}}">
-            @error('description')
+            @enderror" value="{{old('description')}}">
+            @error('name')
             <div class="alert alert-danger mt-2 ">
             {{$message}}
                 </div>

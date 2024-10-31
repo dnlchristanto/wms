@@ -17,7 +17,7 @@ class Item extends Model
 
     public function productgroup()
     {
-        return $this->belongsTo(ProductGroup::class);
+        return $this->belongsTo(ProductGroup::class, 'product_group_id', 'id');
     }
 
     public function transactionline()

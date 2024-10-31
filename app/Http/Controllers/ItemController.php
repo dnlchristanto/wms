@@ -35,8 +35,8 @@ class ItemController extends Controller
         $this->validate($request,[
             'product_group_id' => 'required',
             'no' => 'required|min:3',
-            'description' => 'required|min:3',
-            'UOM' => 'required'
+            'description' => 'required|min:3'
+            //'UOM' => 'required'
         ]);
 
         // create ke database
@@ -62,9 +62,10 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
+        $productgroups=ProductGroup::latest()->get();
         // cari data yg mau di edit berdasarkan id
         $item=Item::findOrFail($id);
-        return view('items.edit',compact('item'));
+        return view('items.edit',compact('item','productgroups'));
     }
 
     /**
@@ -76,8 +77,8 @@ class ItemController extends Controller
         $this->validate($request,[
             'product_group_id' => 'required',
             'no' => 'required|min:3',
-            'description' => 'required|min:3',
-            'UOM' => 'required'
+            'description' => 'required|min:3'
+            //'UOM' => 'required'
         ]);
 
         // cari yg mau di edit

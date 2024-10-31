@@ -67,6 +67,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('customers.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Customers</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../layout/boxed.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
@@ -82,6 +88,25 @@
             </ul>
           </li>
 
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Transaction
+                <i class="fas fa-angle-left right"></i>
+
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('salesshipmentheaders.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Surat Jalan NAV</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
 
           <li class="nav-header">Transactions</li>
           <li class="nav-item">

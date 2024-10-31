@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductGroupController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SalesShipmentHeaderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,5 @@ Route::get('/home',[HomeController::class,'index'])->middleware('auth');
 
 Route::resource('productgroups', ProductGroupController::class)->middleware('auth');
 Route::resource('items', ItemController::class)->middleware('auth');
+Route::resource('customers', CustomerController::class)->middleware('auth');
+Route::resource('salesshipmentheaders', SalesShipmentHeaderController::class)->middleware('auth');

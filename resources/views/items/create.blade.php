@@ -15,10 +15,10 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-child"></i></span>
           </div>
-          <input name="code" type="text" class="form-control @error('code')
+          <input name="no" type="text" class="form-control @error('no')
           is-invalid
-            @enderror" value="{{old('code')}}">
-            @error('code')
+            @enderror" value="{{old('no')}}">
+            @error('no')
             <div class="alert alert-danger mt-2 ">
             {{$message}}
                 </div>
